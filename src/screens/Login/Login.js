@@ -9,7 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 
-const LoginScreen = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -152,4 +152,4 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
 });
-export default LoginScreen;
+export default Login;

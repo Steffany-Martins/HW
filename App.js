@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 //Screen
-import LoginScreen from './src/screens/Login/LoginScreen';
-import HomeScreen from './src/screens/Home/HomeScreen';
-import LoadingScreen from './src/screens/Loading/LoadingScreen';
-import RegisterScreen from './src/screens/Register/RegisterScreen';
+import Login from './src/screens/Login/LoginScreen';
+import Home from './src/screens/Home/HomeScreen';
+import Loading from './src/screens/Loading/LoadingScreen';
+import Register from './src/screens/Register/RegisterScreen';
 
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -25,18 +25,18 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const AppStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: Home,
 });
 
 const AuthStack = createStackNavigator({
-  Login: LoginScreen,
-  Register: RegisterScreen,
+  Login: Login,
+  Register: Register,
 });
 
 export default createAppContainer(
   createSwitchNavigator(
     {
-      Loading: LoadingScreen,
+      Loading: Loading,
       App: AppStack,
       Auth: AuthStack,
     },
