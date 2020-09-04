@@ -9,7 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 
-export default function Login({navigation}) {
+const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -69,7 +69,7 @@ export default function Login({navigation}) {
       </View>
     </KeyboardAvoidingView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   image: {
@@ -154,3 +154,4 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
 });
+export default LoginScreen;
