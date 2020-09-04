@@ -1,22 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, LayoutAnimation} from 'react-native';
 
 const Register = () => {
-    return (
-        <View style={
-            styles.container
-        }>
-            <Text>Register</Text>
-        </View>
-    );
+  LayoutAnimation.easeInEaseOut();
+
+  return (
+    <View style={styles.container}>
+      <Text>Register</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default Register;
