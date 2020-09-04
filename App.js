@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 //Screen
-import Login from './src/screens/Login/LoginScreen';
-import Home from './src/screens/Home/HomeScreen';
-import Loading from './src/screens/Loading/LoadingScreen';
-import Register from './src/screens/Register/RegisterScreen';
+import Login from './src/screens/Login/Login';
+import Home from './src/screens/Home/Home';
+import Loading from './src/screens/Loading/Loading';
+import Register from './src/screens/Register/Register';
 
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
