@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, LayoutAnimation} from 'react-native';
+// logo -> import LOGOSVG from '../../assets/logo-conectadas.svg';
 
-const Register = () => {
+const Register = ({navigation}) => {
   LayoutAnimation.easeInEaseOut();
 
   return (

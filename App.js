@@ -28,10 +28,18 @@ const AppStack = createStackNavigator({
   Home: Home,
 });
 
-const AuthStack = createStackNavigator({
-  Login: Login,
-  Register: Register,
-});
+const AuthStack = createStackNavigator(
+  {
+    Login: Login,
+    Register: Register,
+  },
+  {
+    initialRouteName: 'Login',
+    defaultNavigationOptions: {
+      headerShown: false,
+    },
+  },
+);
 
 export default createAppContainer(
   createSwitchNavigator(

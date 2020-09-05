@@ -8,12 +8,12 @@ import {
   TouchableOpacity,
   StyleSheet,
   TextInput,
-  ImageBackground,
   UIManager,
 } from 'react-native';
-import LOGOSVG from '../../assets/logo-conectadas.svg';
-import BACKGROUND from '../../assets/background.png';
 import {HeaderBackground} from 'react-navigation-stack';
+
+import IconFace from '../../assets/facebook.svg';
+import IconGoog from '../../assets/google.svg';
 
 if (
   Platform.OS === 'android' &&
@@ -42,16 +42,28 @@ const Login = ({navigation}) => {
       <View style={styles.container}>
         <KeyboardAvoidingView style={styles.background}>
           <View
-            styles={{
-              alignSelf: 'center',
-              marginTop: 10,
-              marginBottom: 300,
-              lineHeight: 21,
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              marginBottom: 30,
             }}
-            accessibilityLabel="logo conectadas">
-            <LOGOSVG width="300" height="200" />
+            accessibilityLabel="login com redes sociais">
+            <View style={{marginLeft: 10}}>
+              <IconFace width={90} height={90} />
+            </View>
+            <IconGoog width={90} height={90} />
           </View>
-          <View>
+          <Text
+            style={{
+              color: '#fff',
+
+              fontSize: 20,
+              marginBottom: 0,
+            }}>
+            ─────────── OU ───────────
+          </Text>
+
+          <View accessibilityLabel="login com email e senha cadastrados">
             <TextInput
               //value={email}
               style={styles.input}
@@ -79,14 +91,24 @@ const Login = ({navigation}) => {
             <TouchableOpacity
               style={styles.button}
               onPress={() => navigation.navigate('Home')}>
-              <Text style={styles.buttonText}>Pronto</Text>
+              <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text}>Esqueci minha senha.</Text>
+              <Text style={styles.createText}>Esqueci minha senha.</Text>
             </TouchableOpacity>
             <TouchableOpacity></TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-              <Text style={styles.text}>Ainda não tem conta?</Text>
+              <Text style={styles.text}>
+                Ao continuar, você concorda com os seguintes termos e condições.
+              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <Text style={styles.text}>Política de Privacidade</Text>
+                <Text style={styles.text}>Termos e Condições</Text>
+              </View>
             </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
@@ -126,7 +148,8 @@ const styles = StyleSheet.create({
 
   button: {
     borderRadius: 30,
-    backgroundColor: '#E7724B',
+    backgroundColor: '#E77',
+
     minWidth: 350,
     textAlign: 'center',
     minHeight: 50,
@@ -156,13 +179,12 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Roboto',
     fontStyle: 'normal',
-    fontWeight: '500',
-    fontSize: 20,
-    lineHeight: 21,
+    fontWeight: '200',
+    fontSize: 15,
     color: '#fff',
     alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 180,
+    marginLeft: 20,
+    marginTop: 30,
   },
 
   createText: {
@@ -173,7 +195,8 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     color: '#E7724B',
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 10,
+    marginBottom: 90,
   },
 });
 export default Login;
