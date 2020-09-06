@@ -6,6 +6,7 @@ import Loading from './src/screens/Loading/Loading';
 import Register from './src/screens/Register/Register';
 import Home from './src/screens/Home/Home';
 import Welcome from './src/screens/Welcome/Welcome';
+
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 

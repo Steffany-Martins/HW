@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text, View} from 'react-native';
-import {Ionicons} from 'react-native-vector-icons/Ionicons';
 import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 function HomeScreen() {
   return (
@@ -20,23 +20,49 @@ function SettingsScreen() {
   );
 }
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
-export default function App() {
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      inactiveColor="#ddd"
+      labeled={false}
+      activeColor="#FC9272"
+      barStyle={{backgroundColor: '#694fad'}}>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({color}) => <Icon name="home" color={color} size={23} />,
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({color}) => (
+            <Icon name="wallet" color={color} size={21} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({color}) => (
+            <Icon name="user-circle" color={color} size={25} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+export default function TabBar() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}>
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{tabBarBadge: 3}}
-        />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
+      <MyTabs />
     </NavigationContainer>
   );
 }
