@@ -90,7 +90,7 @@ const Login = ({navigation}) => {
                                 styles.button
                             }
                             onPress={
-                                () => navigation.navigate('Principal')
+                                () => navigation.navigate('Home')
                         }>
                             <Text style={
                                 styles.buttonText
