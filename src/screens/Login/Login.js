@@ -38,14 +38,14 @@ const Login = ({navigation}) => {
   LayoutAnimation.easeInEaseOut();
 
   return (
-    <HeaderBackground style={{top: 0, left: 0, backgroundColor: '#232954'}}>
+    <HeaderBackground style={{top: 1, left: 0, backgroundColor: '#232954'}}>
       <View style={styles.container}>
         <KeyboardAvoidingView style={styles.background}>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'center',
-              marginBottom: 30,
+              marginBottom: 90,
             }}
             accessibilityLabel="login com redes sociais">
             <View style={{marginLeft: 10}}>
@@ -90,11 +90,11 @@ const Login = ({navigation}) => {
             />
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Home')}>
+              onPress={() => navigation.navigate('Principal')}>
               <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.createText}>Esqueci minha senha.</Text>
+              <Text style={styles.createText} >Esqueci minha senha.</Text>
             </TouchableOpacity>
             <TouchableOpacity></TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Register')}>
