@@ -4,7 +4,7 @@ import {StatusBar} from 'react-native';
 import Login from './src/screens/Login/Login';
 import Loading from './src/screens/Loading/Loading';
 import Register from './src/screens/Register/Register';
-import Home from './src/screens/Home/Home';
+import TabBar from './src/components/TabBar/TabBar';
 import Welcome from './src/screens/Welcome/Welcome';
 
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
@@ -27,10 +27,10 @@ firebase.initializeApp(firebaseConfig);
 <StatusBar barStyle="default" />;
 const AppStack = createStackNavigator(
   {
-    Home: Home,
+    TabBar: TabBar,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'TabBar',
     defaultNavigationOptions: {
       headerShown: false,
     },

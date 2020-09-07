@@ -83,7 +83,7 @@ const Login = ({navigation}) => {
             />
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Home')}>
+              onPress={() => navigation.navigate('TabBar')}>
               <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
             <TouchableOpacity>

@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Home from '../../screens/Home/Home';
 
 function HomeScreen() {
   return (
@@ -24,6 +25,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 function MyTabs() {
   return (
+    <NavigationContainer>
     <Tab.Navigator
       initialRouteName="Home"
       inactiveColor="#ddd"
@@ -32,7 +34,7 @@ function MyTabs() {
       barStyle={{backgroundColor: '#694fad'}}>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={Home}
         options={{
           tabBarIcon: ({color}) => <Icon name="home" color={color} size={23} />,
         }}
@@ -56,13 +58,9 @@ function MyTabs() {
         }}
       />
     </Tab.Navigator>
-  );
-}
-
-export default function TabBar() {
-  return (
-    <NavigationContainer>
-      <MyTabs />
     </NavigationContainer>
   );
 }
+export default MyTabs;
+
+

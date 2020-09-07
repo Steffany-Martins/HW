@@ -10,7 +10,6 @@ import {
   TextInput,
   UIManager,
 } from 'react-native';
-import {HeaderBackground} from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import IconLogo from '../../assets/logo-conectadas.svg';
 
@@ -40,9 +39,10 @@ const Register = ({navigation}) => {
     <>
       <StatusBar barStyle="light-content" backgroundColor="#232954" />
 
-      <HeaderBackground
+      <View
         style={{
           top: 0,
+
           left: 0,
           backgroundColor: '#232954',
         }}>
@@ -50,7 +50,7 @@ const Register = ({navigation}) => {
           <KeyboardAvoidingView style={styles.background}>
             <View
               style={{
-                marginBottom: 10,
+                marginBottom: 31,
                 marginTop: 10,
                 right: 150,
               }}
@@ -150,7 +150,7 @@ const Register = ({navigation}) => {
             </View>
           </KeyboardAvoidingView>
         </View>
-      </HeaderBackground>
+      </View>
     </>
   );
 };

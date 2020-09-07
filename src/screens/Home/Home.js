@@ -1,21 +1,18 @@
 import React, {useState, useRef} from 'react';
-import TabBar from '../../components/TabBar/TabBar';
 import {
   View,
   Text,
-  KeyboardAvoidingView,
+  ScrollView,
   StatusBar,
   LayoutAnimation,
-  TouchableOpacity,
   StyleSheet,
   TextInput,
   UIManager,
+  Image,
+  TouchableOpacity,
 } from 'react-native';
-import {HeaderBackground} from 'react-navigation-stack';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import IconFace from '../../assets/facebook.svg';
-import IconGoog from '../../assets/google.svg';
-import IconLogo from '../../assets/logo-conectadas.svg';
+
+import Categories from '../../components/Categories/Categories';
 
 if (
   Platform.OS === 'android' &&
@@ -37,20 +34,85 @@ const Home = ({navigation}) => {
   LayoutAnimation.easeInEaseOut();
 
   return (
-    <HeaderBackground
+    <View
       style={{
         top: 0,
         left: 0,
+        height: 1000,
         backgroundColor: '#232954',
       }}>
       <StatusBar barStyle="light-content" backgroundColor="#232954" />
-      <TabBar />
-    </HeaderBackground>
+      <TextInput
+        style={styles.input}
+        placeholder="Search"
+        autoCorrect={true}
+        placeholderTextColor="#000000"
+        returnKeyType={'next'}
+        onSubmitEditing={() => {
+          passwordTextInput.focus();
+        }}
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+      />
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{width: '200%', height: 1}}>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Marketing Digital"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Planos de Conta"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Iniciando minha empresa"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Como empreender?"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Como abrir minha empresa de sucesso?"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Como utilizar planos de conta na minha confeitaria?"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Conteudo iniciante"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Conteudo medio"></Categories>
+        <Categories
+          color="#694fad"
+          textColor="white"
+          text="Conteudo avançado"></Categories>
+      </ScrollView>
+
+      <ScrollView
+        vertiical
+        showsVerticalScrollIndicator={false}
+        style={{width: '100%', height: 100, marginLeft: 60, marginTop: 20}}>
+        <Categories
+          color="#ffffff"
+          textColor="white"
+          text="Natalia"></Categories>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    marginTop: 0,
+  },
 
   image: {
     maxHeight: 200,
@@ -60,32 +122,32 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    paddingLeft: 20,
-    minWidth: 350,
-    marginBottom: 20,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#ffff',
+    paddingLeft: 25,
+    minWidth: 40,
+    marginBottom: 1,
+    borderBottomWidth: 2,
+    borderBottomColor: '#000000',
     color: '#DBD8B3',
     fontFamily: 'Roboto',
     fontSize: 18,
   },
 
   background: {
-    flex: 0,
+    flex: 100,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
-  button: {
-    borderRadius: 30,
-    backgroundColor: '#FF80B5',
-
-    minWidth: 350,
+  button1: {
+    borderRadius: 20,
+    backgroundColor: '#ffffff',
+    marginTop: 16,
+    minWidth: 30,
     textAlign: 'center',
-    minHeight: 50,
+    minHeight: 60,
     alignItems: 'center',
     fontWeight: '500',
-    shadowColor: '#000',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 1,
@@ -98,10 +160,10 @@ const styles = StyleSheet.create({
 
   buttonText: {
     textTransform: 'uppercase',
-    color: 'white',
-    paddingTop: 13,
+    backgroundColor: '#ffffff',
+    paddingTop: 15,
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 12,
     fontWeight: '500',
     fontFamily: 'Roboto',
   },
@@ -129,4 +191,5 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
 });
+
 export default Home;
