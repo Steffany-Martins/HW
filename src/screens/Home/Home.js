@@ -12,7 +12,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import Post from '../../components/Post/Post';
 import Categories from '../../components/Categories/Categories';
+
+import Perfil from '../../assets/perfil.jpg';
 
 if (
   Platform.OS === 'android' &&
@@ -38,8 +41,8 @@ const Home = ({navigation}) => {
       style={{
         top: 0,
         left: 0,
-        height: 1000,
-        backgroundColor: '#232954',
+        height: 690,
+        backgroundColor: '#F8B',
       }}>
       <StatusBar barStyle="light-content" backgroundColor="#232954" />
       <TextInput
@@ -54,10 +57,13 @@ const Home = ({navigation}) => {
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
+      <View style={styles.text}>
+        <Text style={styles.textH1}>Assuntos de seu interesse</Text>
+      </View>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={{width: '200%', height: 1}}>
+        style={{height: 1, top: 10}}>
         <Categories
           color="#694fad"
           textColor="white"
@@ -98,12 +104,28 @@ const Home = ({navigation}) => {
 
       <ScrollView
         vertiical
-        showsVerticalScrollIndicator={false}
-        style={{width: '100%', height: 100, marginLeft: 60, marginTop: 20}}>
-        <Categories
-          color="#ffffff"
-          textColor="white"
-          text="Natalia"></Categories>
+        showsVerticalScrollIndicator={true}
+        style={{width: '100%', height: 200, marginTop: 20}}>
+        <View style={styles.text}>
+          <Text style={styles.textH1}>Feed</Text>
+        </View>
+
+        <Post
+          title="Lorena Moreira"
+          url={Perfil}
+          text="Freelancer- home office">
+          <Text>
+            Todos querem alcançar o sucesso e sentir realização no nossso
+            trabalho. Só queremos respeito nas nossas escolhas e sororidade
+            entre as mulheres.
+          </Text>
+        </Post>
+        <Post title="Bruna Moraes" url={Perfil} text="Designer at Zee.Dog">
+          <Text>
+            Meu primeiro post nessa rede social! Animada em fazer contato com
+            vocês!
+          </Text>
+        </Post>
       </ScrollView>
     </View>
   );
@@ -167,7 +189,11 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontFamily: 'Roboto',
   },
-
+  textH1: {
+    top: 5,
+    fontSize: 20,
+    color: '#fff',
+  },
   text: {
     fontFamily: 'Roboto',
     fontStyle: 'normal',
