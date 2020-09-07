@@ -16,6 +16,7 @@ import Post from '../../components/Post/Post';
 import Categories from '../../components/Categories/Categories';
 
 import Perfil from '../../assets/perfil.jpg';
+import Perfil1 from '../../assets/perfil1.jpg';
 
 if (
   Platform.OS === 'android' &&
@@ -120,7 +121,7 @@ const Home = ({navigation}) => {
             entre as mulheres.
           </Text>
         </Post>
-        <Post title="Bruna Moraes" url={Perfil} text="Designer at Zee.Dog">
+        <Post title="Bruna Moraes" url={Perfil1} text="Designer at Zee.Dog">
           <Text>
             Meu primeiro post nessa rede social! Animada em fazer contato com
             vocês!
