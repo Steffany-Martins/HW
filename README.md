@@ -18,7 +18,6 @@
 
 <p align="justify">Conectadas é um projeto de conexão entre mulheres, feito no estilo LinkedIN, porém idealizado para a solução de incentivo ao empreendedorismo feminino.</p>
 <div align="center">
-<img src="https://github.com/Steffany-Martins/PWA-weather/blob/master/chrome-capture.gif" alt="HW app working in search gift"/>
 </div>
 <br>
 
