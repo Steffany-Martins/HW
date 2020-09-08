@@ -9,14 +9,14 @@
 
 <h1 id="HW">ℹ️ What's Conectadas App?</h1>
 
-<p align="justify">Esse App
+<p align="justify">Esse App é uma rede corporativa para mulheres.
 <p>
 
 
 
 <h2 id="Project">💻 Project</h2>
 
-<p align="justify">Weather App is a project with Progressive Web Application and React JS. With search in the input, you can be abble to find a weather in the city or country. </p>
+<p align="justify">Conectadas é um projeto de conexão entre mulheres, feito no estilo LinkedIN, porém idealizado para a solução de incentivo ao empreendedorismo feminino.</p>
 <div align="center">
 <img src="https://github.com/Steffany-Martins/PWA-weather/blob/master/chrome-capture.gif" alt="HW app working in search gift"/>
 </div>
