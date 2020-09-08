@@ -4,4 +4,4 @@
 *.json
 *.INI
 *.XML
-*.Starlak
+*.js linguist-detectable=true
